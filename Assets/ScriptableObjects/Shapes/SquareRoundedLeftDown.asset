@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f435bdd422c9b04299a2ca200a74865, type: 3}
+  m_Name: SquareRoundedLeftDown
+  m_EditorClassIdentifier: 
+  Name: 9
+  FilledSprite: {fileID: 21300000, guid: 4b05d9276e2d6f9418a021877e7411c9, type: 3}
+  BlankSprite: {fileID: 21300000, guid: 5559a48fd3dcce24a8cb88c9b2c081c5, type: 3}

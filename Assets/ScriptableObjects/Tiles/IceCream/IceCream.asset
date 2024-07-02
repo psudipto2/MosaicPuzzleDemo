@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ee1d046010eba49b49f5b9b93827ed, type: 3}
+  m_Name: IceCream
+  m_EditorClassIdentifier: 
+  Name: 
+  Tile:
+  - {fileID: 11400000, guid: 7dc2e145d113359439988ec7b4f5279b, type: 2}
+  - {fileID: 11400000, guid: edcee0e0587825d4b88549dfad79964f, type: 2}
+  - {fileID: 11400000, guid: 1208ef1f35b307245bf5bd4d5e371f1f, type: 2}
+  - {fileID: 11400000, guid: 39ceeaf39be4cea479633f713bf8e780, type: 2}
+  - {fileID: 11400000, guid: e2cafebf95590d840906e8c13ad5121d, type: 2}
+  - {fileID: 11400000, guid: 95c9aa5bf2f052f46a4fa35aad6f91bc, type: 2}
+  - {fileID: 11400000, guid: 9638a9e686e44c54d95895948b5b2886, type: 2}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ee1d046010eba49b49f5b9b93827ed, type: 3}
+  m_Name: Ambulance
+  m_EditorClassIdentifier: 
+  Name: 
+  Tile:
+  - {fileID: 11400000, guid: f9c89c59b4945eb41bccd984d14d7bb4, type: 2}
+  - {fileID: 11400000, guid: 2259436f0aadd1649a5b1eefaea8463d, type: 2}
+  - {fileID: 11400000, guid: 73163bed6167c184da235a8e2fec19cf, type: 2}
+  - {fileID: 11400000, guid: ff73e4a4a2c0f84439287757dde29d2e, type: 2}
+  - {fileID: 11400000, guid: da95b6ab51f2cd14a94a0b5dd2a8610b, type: 2}
+  - {fileID: 11400000, guid: a50cf6c1e30312c4999fecec3aee259a, type: 2}
+  - {fileID: 11400000, guid: 1886709a64ca9a546ac2eadae6cd432b, type: 2}
+  - {fileID: 11400000, guid: c8a438fe09877d54593b97b55bd9c631, type: 2}
+  - {fileID: 11400000, guid: ce562490a42f0ad4c9fdc70af90de936, type: 2}
+  - {fileID: 11400000, guid: 34ac575480cd47f4aabb232d8a1d92e3, type: 2}
+  - {fileID: 11400000, guid: d184e66eff9a18745884bb9f897d442d, type: 2}
