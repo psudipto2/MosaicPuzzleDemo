@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Actions;
-using Manager.MainGame;
+using Provider.Manager;
 using Data.Colour;
 using MVC.Colour;
 
@@ -28,7 +28,7 @@ namespace Manager.Colour
         #region Unity Methods
         private void Awake()
         {
-            GameManager.Instance.ColourManager = this;
+            ManagerProvider.Instance.ColourManager = this;
             colourControllers = new List<ColourController>();
             GameActions.OnChangeColour += OnColourChange;
         }

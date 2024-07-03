@@ -1,5 +1,6 @@
 namespace Enums
 {
+    #region Enums
     public enum ColourName
     {
         None,
@@ -35,11 +36,12 @@ namespace Enums
         Filled,
         Blank
     }
-    public enum Level
+    public enum LevelType
     {
         None,
         Easy,
         Medium,
         Hard
     }
+    #endregion
 }

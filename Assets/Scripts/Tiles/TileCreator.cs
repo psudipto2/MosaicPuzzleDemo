@@ -14,7 +14,6 @@ namespace Data.Tile
     public class TileCreator : ScriptableObject
     {
         #region Variables
-        public string Name;
         public List<BlockRow> Tile;
         #endregion
     }

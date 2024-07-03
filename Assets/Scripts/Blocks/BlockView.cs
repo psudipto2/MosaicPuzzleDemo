@@ -52,6 +52,16 @@ namespace MVC.Block
                     break;
             }
         }
+
+        public void ToggleImageOnBlankTile(bool place)
+        {
+            if (place)
+            {
+                filledImage.sprite = blockController.BlockModel.FilledSprite;
+                filledImage.color= blockController.BlockModel.Color;
+            }
+            filledImage.gameObject.SetActive(place);
+        }
         #endregion
     }
 }

@@ -1,6 +1,6 @@
 using Actions;
 using Enums;
-using Manager.MainGame;
+using Provider.Manager;
 using UnityEngine;
 
 namespace MVC.Block
@@ -33,27 +33,66 @@ namespace MVC.Block
         #region Methods
         public void CheckBlock()
         {
-            if (blockModel.Block != null && GameManager.Instance.ColourManager.CurrentColour == blockModel.Block.Colour && GameManager.Instance.ShapeManager.CurrentShape == blockModel.Block.Shape)
+            if(ManagerProvider.Instance.TileManager.IsBlankTile)
+                CheckBlockOnBlankTile();
+            else
+                CheckBlockOnFilledTile();
+        }
+
+        private void CheckBlockOnBlankTile()
+        {
+            Debug.Log("Enter");
+            Sprite currentSprite = ManagerProvider.Instance.ShapeManager.CurrentShape.FilledSprite;
+            Color currentColor = ManagerProvider.Instance.ColourManager.CurrentColour.Color;
+            if (!blockFilled)
+            {
+
+                blockModel.FilledSprite = currentSprite;
+                blockModel.Color = currentColor;
+                GameActions.OnPlaceBlock?.Invoke();
+                blockView.ToggleImageOnBlankTile(true);
+                blockFilled = true;
+            }
+            else
+            {
+                if(blockModel.FilledSprite==currentSprite && blockModel.Color == currentColor)
+                {
+                    GameActions.OnRemoveBlock?.Invoke();
+                    blockView.ToggleImageOnBlankTile(false);
+                    blockFilled = false;
+                }
+                else
+                {
+                    if (blockModel.Color != currentColor)
+                        blockModel.Color = currentColor;
+                    else if (blockModel.FilledSprite != currentSprite)
+                        blockModel.FilledSprite = currentSprite;
+                    blockView.ToggleImageOnBlankTile(true);
+                }
+            }
+        }
+
+        private void CheckBlockOnFilledTile()
+        {
+            if (blockModel.Block != null && ManagerProvider.Instance.ColourManager.CurrentColour == blockModel.Block.Colour && ManagerProvider.Instance.ShapeManager.CurrentShape == blockModel.Block.Shape)
             {
                 if (!blockFilled)
                 {
-                    GameActions.OnClickRightBlock?.Invoke(true);
+                    GameActions.OnPlaceBlock?.Invoke();
                     blockView.ToggleImage(BlockType.Filled);
-                    GameManager.Instance.TileManager.CheckWin(-1);
                     blockFilled = true;
                 }
                 else
                 {
-                    GameActions.OnClickRightBlock?.Invoke(false);
+                    GameActions.OnRemoveBlock?.Invoke();
                     blockView.ToggleImage(BlockType.Blank);
-                    GameManager.Instance.TileManager.CheckWin(1);
                     blockFilled = false;
                 }
             }
             else
             {
-                GameActions.OnClickWrongBlock?.Invoke();
-                GameManager.Instance.FallingObjectManager.CreateNewFallingObject(blockView.gameObject.transform,blockView.gameObject.GetComponent<RectTransform>());
+                GameActions.OnPlaceWrongBlock?.Invoke();
+                ManagerProvider.Instance.FallingObjectManager.CreateNewFallingObject(blockView.gameObject.transform,blockView.gameObject.GetComponent<RectTransform>());
             }
         }
         #endregion

@@ -1,6 +1,6 @@
 using Actions;
 using Data.Shapes;
-using Manager.MainGame;
+using Provider.Manager;
 using MVC.Shape;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,7 +28,7 @@ namespace Manager.Shapes
         #region Unity Methods
         private void Awake()
         {
-            GameManager.Instance.ShapeManager = this;
+            ManagerProvider.Instance.ShapeManager = this;
             shapeControllers = new List<ShapeController>();
             GameActions.OnChangeShape += OnShapeChange;
         }

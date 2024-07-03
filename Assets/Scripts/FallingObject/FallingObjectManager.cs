@@ -1,7 +1,5 @@
-using Manager.MainGame;
+using Provider.Manager;
 using MVC.FallingObject;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Manager.FallingObject
@@ -18,7 +16,7 @@ namespace Manager.FallingObject
         #region Unity Methods
         private void Awake()
         {
-            GameManager.Instance.FallingObjectManager = this;
+            ManagerProvider.Instance.FallingObjectManager = this;
         }
         #endregion
 
@@ -29,7 +27,7 @@ namespace Manager.FallingObject
             fallingObjectView.transform.position = transform.position;
             fallingObjectView.GetComponent<RectTransform>().sizeDelta = rectTransform.sizeDelta;
 
-            FallingObjectModel fallingObjectModel = new FallingObjectModel(GameManager.Instance.ShapeManager.CurrentShape.FilledSprite, GameManager.Instance.ColourManager.CurrentColour.Color);
+            FallingObjectModel fallingObjectModel = new FallingObjectModel(ManagerProvider.Instance.ShapeManager.CurrentShape.FilledSprite, ManagerProvider.Instance.ColourManager.CurrentColour.Color);
             FallingObjectController fallingObjectController = new FallingObjectController(fallingObjectModel, fallingObjectView.GetComponent<FallingObjectView>());
         }
         #endregion

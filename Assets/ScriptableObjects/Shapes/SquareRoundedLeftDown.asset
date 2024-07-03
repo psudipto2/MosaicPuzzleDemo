@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SquareRoundedLeftDown
   m_EditorClassIdentifier: 
   Name: 9
-  FilledSprite: {fileID: 21300000, guid: 4b05d9276e2d6f9418a021877e7411c9, type: 3}
-  BlankSprite: {fileID: 21300000, guid: 5559a48fd3dcce24a8cb88c9b2c081c5, type: 3}
+  FilledSprite: {fileID: 21300000, guid: c31fdfbf84515d542bb30ca26c20e426, type: 3}
+  BlankSprite: {fileID: 21300000, guid: d9d7342fccf7a9746b30a04da7cbdafe, type: 3}
