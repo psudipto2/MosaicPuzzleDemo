@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ee1d046010eba49b49f5b9b93827ed, type: 3}
+  m_Name: PersonOnBoat
+  m_EditorClassIdentifier: 
+  Name: 
+  Tile:
+  - {fileID: 11400000, guid: f0a213d2dc8b4cc4badc0e57231cbd0c, type: 2}
+  - {fileID: 11400000, guid: f46967905c084844882ed66f484e95a2, type: 2}
+  - {fileID: 11400000, guid: 71b6ec963b62a834495a63c156163e29, type: 2}
+  - {fileID: 11400000, guid: d2f2b981cfc9d9f40b15d52328463434, type: 2}
+  - {fileID: 11400000, guid: 83c5343c85152e74584970ef21138bbb, type: 2}
+  - {fileID: 11400000, guid: 9648d756777e5f74e9dd92a01fa37d0f, type: 2}
+  - {fileID: 11400000, guid: 6419776109643c24fbed913416be8b57, type: 2}
+  - {fileID: 11400000, guid: efdfc1bfb19931e4e96a8c6a877cb477, type: 2}

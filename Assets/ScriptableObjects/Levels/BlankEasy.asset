@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BlankEasy
   m_EditorClassIdentifier: 
   LevelType: 1
-  LevelSprite: {fileID: 0}
+  LevelSprite: {fileID: 21300000, guid: 2c0491ce5a7c4c3409544c9ddbda38f4, type: 3}
   Name: AS YOU WANT
   Tile: {fileID: 11400000, guid: 51bab2e8af667314ebaef0ce39643211, type: 2}

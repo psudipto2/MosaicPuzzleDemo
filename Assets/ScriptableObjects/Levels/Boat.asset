@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60db62159693f5d4e8dcf6b860c7b7e2, type: 3}
   m_Name: Boat
   m_EditorClassIdentifier: 
-  LevelType: 2
-  LevelSprite: {fileID: 0}
+  LevelType: 1
+  LevelSprite: {fileID: 21300000, guid: ac838801101082649a7a91423ccc4d96, type: 3}
   Name: BOAT
-  Tile: {fileID: 11400000, guid: 3c0939f3b396b97439f8aa4b51a4cb81, type: 2}
+  Tile: {fileID: 11400000, guid: 78dee9cb29db85f49822c6aedf2d1c0c, type: 2}

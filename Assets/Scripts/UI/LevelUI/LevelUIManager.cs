@@ -1,7 +1,6 @@
 using Actions;
 using Enums;
-using Provider.Manager;
-using System.Collections;
+using Manager.UI.PausePanel;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,46 +13,54 @@ namespace Manager.UI.Level
     public class LevelUIManager : MonoBehaviour
     {
         #region Variables
-        [SerializeField] private Button backToMainMenuButton;
         [SerializeField] private Button easyButton;
         [SerializeField] private Button mediumButton;
         [SerializeField] private Button hardButton;
         [SerializeField] private Button defaultLevelButton;
         [SerializeField] private LevelType defaultLevelType;
+        [SerializeField] private PausePanelManager levelMenuPausePanel;
+        [SerializeField] private AudioClip sfxClip;
 
         private List<Button> levelSelectionButtons = new List<Button>();
+        private Button currentLevelSelectionButton;
+        #endregion
+
+        #region Properties
+        public PausePanelManager LevelMenuPausePanelManager {  get { return levelMenuPausePanel; } }
         #endregion
 
         #region Unity Methods
+        private void Start()
+        {
+            GameActions.OnSetLevelMenuButtonsInteractable += SetAllButtonsInteractable;
+        }
         private void OnEnable()
         {
-            backToMainMenuButton.onClick.AddListener(OnClickBackButton);
             easyButton.onClick.AddListener(OnClickEasyButton);
             mediumButton.onClick.AddListener(OnClickMediumButton);
             hardButton.onClick.AddListener(OnClickHardButton);
             levelSelectionButtons.Add(easyButton);
             levelSelectionButtons.Add(mediumButton);
             levelSelectionButtons.Add(hardButton);
-            OnChangeCurentSelectedButton(defaultLevelButton);
             GameActions.OnChangeCurrentLevelType?.Invoke(defaultLevelType);
+            currentLevelSelectionButton = defaultLevelButton;
+            OnChangeCurentSelectedButton(currentLevelSelectionButton);
         }
 
         private void OnDisable()
         {
-            backToMainMenuButton?.onClick.RemoveListener(OnClickBackButton);
-            easyButton?.onClick.RemoveListener(OnClickEasyButton);
-            mediumButton?.onClick.RemoveListener(OnClickMediumButton);
-            hardButton?.onClick.RemoveListener(OnClickHardButton);
+            easyButton.onClick.RemoveListener(OnClickEasyButton);
+            mediumButton.onClick.RemoveListener(OnClickMediumButton);
+            hardButton.onClick.RemoveListener(OnClickHardButton);
             levelSelectionButtons.Clear();
+        }
+        private void OnDestroy()
+        {
+            GameActions.OnSetLevelMenuButtonsInteractable -= SetAllButtonsInteractable;
         }
         #endregion
 
         #region Methods
-        private void OnClickBackButton()
-        {
-            ManagerProvider.Instance.ScenesManager.LoadMainMenu();
-        }
-
         private void OnClickEasyButton()
         {
             GameActions.OnChangeCurrentLevelType?.Invoke(LevelType.Easy);
@@ -72,18 +79,31 @@ namespace Manager.UI.Level
 
         private void OnChangeCurentSelectedButton(Button currentButton)
         {
-            for(int i=0;i<levelSelectionButtons.Count;i++)
+            GameActions.OnPlaySFXAudio?.Invoke(sfxClip);
+            for (int i=0;i<levelSelectionButtons.Count;i++)
             {
                 if (levelSelectionButtons[i] == currentButton)
                 {
-                    levelSelectionButtons[i].GetComponent<Image>().canvasRenderer.SetAlpha(0.95f);
                     levelSelectionButtons[i].interactable = false;
+                    currentLevelSelectionButton = levelSelectionButtons[i];
                 }
                 else
-                {
-                    levelSelectionButtons[i].GetComponent<Image>().canvasRenderer.SetAlpha(1f);
                     levelSelectionButtons[i].interactable = true;
-                }
+            }
+        }
+
+        private void SetAllButtonsInteractable( bool val)
+        {
+            if (!val)
+            {
+                for (int i = 0; i < levelSelectionButtons.Count; i++)
+                    levelSelectionButtons[i].interactable = val;              
+            }
+            else
+            {
+                for (int i = 0; i < levelSelectionButtons.Count; i++)
+                    levelSelectionButtons[i].interactable = val;
+                currentLevelSelectionButton.interactable = false;
             }
         }
         #endregion

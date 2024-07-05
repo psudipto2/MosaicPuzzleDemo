@@ -181,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlighter: {fileID: 3700671740320741679}
   shapeImage: {fileID: 8687023190230501115}
+  sfxClip: {fileID: 8300000, guid: d711187c3eb6bd34f8e3c841459b3f69, type: 3}
 --- !u!1 &5295187281026606602
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ambulance
   m_EditorClassIdentifier: 
   LevelType: 3
-  LevelSprite: {fileID: 0}
+  LevelSprite: {fileID: 21300000, guid: 91245f5237cb4d143a229d0bd73da91e, type: 3}
   Name: AMBULANCE
   Tile: {fileID: 11400000, guid: 69a382c7967506f4b98bcc86ef17f1de, type: 2}

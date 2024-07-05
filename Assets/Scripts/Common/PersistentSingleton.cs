@@ -2,16 +2,21 @@ using UnityEngine;
 
 namespace Singleton
 {
+    /// <summary>
+    /// Singleton class which stays in all scenes
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class PersistentSingleton<T> : MonoBehaviour where T : PersistentSingleton<T>
     {
+        #region Variables
         private static T instance;
-        public static T Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        #endregion
+
+        #region Properties
+        public static T Instance{ get { return instance; } }
+        #endregion
+
+        #region Unity Methods
         protected virtual void Awake()
         {
             if (instance == null)
@@ -26,5 +31,6 @@ namespace Singleton
                 DontDestroyOnLoad(gameObject);
             }
         }
+        #endregion
     }
 }

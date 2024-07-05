@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ee1d046010eba49b49f5b9b93827ed, type: 3}
+  m_Name: Bird
+  m_EditorClassIdentifier: 
+  Tile:
+  - {fileID: 11400000, guid: 1103440ac8b54e94ebf12bb788674c33, type: 2}
+  - {fileID: 11400000, guid: a032a4ccea9c06b44a80c8ffdf0ae4b7, type: 2}
+  - {fileID: 11400000, guid: 7258cf290b085464599c856c7df97251, type: 2}
+  - {fileID: 11400000, guid: 5e7081f9372ca704f870c58be793f98f, type: 2}
+  - {fileID: 11400000, guid: aa3a727ae7b8fb7468f6174224b13c46, type: 2}
+  - {fileID: 11400000, guid: a1d58160d2f490144bf54f346d981ac2, type: 2}
+  - {fileID: 11400000, guid: e380718c308e4814d97ce84d4e536149, type: 2}

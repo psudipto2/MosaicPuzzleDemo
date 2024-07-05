@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,8 @@ namespace Data.Level
     [CreateAssetMenu(menuName = "Data/Level/Create New Level List", fileName = "LevelList")]
     public class LevelList : ScriptableObject
     {
+        #region Variables
         public List<LevelData> Levels = new List<LevelData>();
+        #endregion
     }
 }

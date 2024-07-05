@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: BoatRow 6
   m_EditorClassIdentifier: 
   Blocks:
-  - {fileID: 11400000, guid: 9fcbeb4eeff36a947a3a30bd7935b909, type: 2}
-  - {fileID: 11400000, guid: d9503ca8f21e49b4e86f1696e4e387f7, type: 2}
+  - {fileID: 11400000, guid: 5234e97e6d07af844aa18ffb2cf8a3ce, type: 2}
+  - {fileID: 11400000, guid: 7e4d4dedba76f724290a05cb77a94022, type: 2}
   - {fileID: 11400000, guid: 46a35471c9ceaef4d97af4113f42611e, type: 2}
-  - {fileID: 11400000, guid: 8ec3db00e9e63c144891cda266f9639b, type: 2}
+  - {fileID: 11400000, guid: 7e4d4dedba76f724290a05cb77a94022, type: 2}
   - {fileID: 11400000, guid: 46a35471c9ceaef4d97af4113f42611e, type: 2}
-  - {fileID: 11400000, guid: 8ec3db00e9e63c144891cda266f9639b, type: 2}
+  - {fileID: 11400000, guid: 7e4d4dedba76f724290a05cb77a94022, type: 2}
   - {fileID: 11400000, guid: 46a35471c9ceaef4d97af4113f42611e, type: 2}
-  - {fileID: 11400000, guid: 8ec3db00e9e63c144891cda266f9639b, type: 2}
-  - {fileID: 11400000, guid: d9503ca8f21e49b4e86f1696e4e387f7, type: 2}
-  - {fileID: 11400000, guid: 53ff4b6a24ad1984c888664974954cb2, type: 2}
+  - {fileID: 11400000, guid: 668ab14d5f0c2e14a932395cac8d9a37, type: 2}

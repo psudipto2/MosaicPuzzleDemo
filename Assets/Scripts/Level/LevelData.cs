@@ -1,7 +1,5 @@
 using Data.Tile;
 using Enums;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Data.Level
@@ -12,9 +10,11 @@ namespace Data.Level
     [CreateAssetMenu(menuName = "Data/Level/Create New Level", fileName = "Level")]
     public class LevelData : ScriptableObject
     {
+        #region Variables
         public LevelType LevelType;
         public Sprite LevelSprite;
         public string Name;
         public TileCreator Tile;
+        #endregion
     }
 }

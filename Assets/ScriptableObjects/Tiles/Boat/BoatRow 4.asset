@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: BoatRow 4
   m_EditorClassIdentifier: 
   Blocks:
-  - {fileID: 11400000, guid: 00f47e5ea3c377b45b1b5e326d14ac90, type: 2}
-  - {fileID: 11400000, guid: 6bbbc4d7c0e03514c9c1d3a55b0f14e6, type: 2}
-  - {fileID: 11400000, guid: 801713844e85dca45aaeb23a84e7e711, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 6bbbc4d7c0e03514c9c1d3a55b0f14e6, type: 2}
   - {fileID: 11400000, guid: 390695f6e79be8947ae46ca12d06a138, type: 2}
-  - {fileID: 11400000, guid: 390695f6e79be8947ae46ca12d06a138, type: 2}
-  - {fileID: 11400000, guid: 53ff4b6a24ad1984c888664974954cb2, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}

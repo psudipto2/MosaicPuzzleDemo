@@ -1,6 +1,5 @@
+using Actions;
 using Provider.Manager;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +13,7 @@ namespace Manager.UI.MainMenu
         #region Variables
         [SerializeField] private Button playButton;
         [SerializeField] private Button exitButton;
+        [SerializeField] private AudioClip sfxClip;
         #endregion
 
         #region Unity Methods
@@ -32,16 +32,15 @@ namespace Manager.UI.MainMenu
         #region Methods
         private void OnClickPlayButton()
         {
+            GameActions.OnPlaySFXAudio?.Invoke(sfxClip);
+            gameObject.SetActive(false);
             ManagerProvider.Instance.ScenesManager.LoadLevelMenu();
         }
 
         private void OnClickExitButton()
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            GameActions.OnPlaySFXAudio?.Invoke(sfxClip);
+            GameActions.OnExitGame?.Invoke();
         }
         #endregion
     }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Actions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,9 +25,26 @@ namespace MVC.Level
         #region Unity Methods
         private void Start()
         {
-            //levelImage.sprite = levelController.LevelModel.LevelSprite;
+            levelImage.sprite = levelController.LevelModel.LevelSprite;
             levelName.text = levelController.LevelModel.LevelName;
             levelButton.onClick.AddListener(levelController.LoadLevel);
+        }
+
+        private void Awake()
+        {
+            GameActions.OnSetLevelMenuButtonsInteractable += SetButtonInteractable;
+        }
+
+        private void OnDestroy()
+        {
+            GameActions.OnSetLevelMenuButtonsInteractable -= SetButtonInteractable;
+        }
+        #endregion
+
+        #region Methods
+        private void SetButtonInteractable(bool val)
+        {
+            levelButton.interactable = val;
         }
         #endregion
     }

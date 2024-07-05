@@ -1,8 +1,6 @@
 using Data.Level;
 using Data.Tile;
 using Enums;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MVC.Level 

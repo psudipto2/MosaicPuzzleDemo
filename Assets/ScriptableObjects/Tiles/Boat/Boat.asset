@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ee1d046010eba49b49f5b9b93827ed, type: 3}
   m_Name: Boat
   m_EditorClassIdentifier: 
-  Name: 
   Tile:
-  - {fileID: 11400000, guid: f0a213d2dc8b4cc4badc0e57231cbd0c, type: 2}
-  - {fileID: 11400000, guid: f46967905c084844882ed66f484e95a2, type: 2}
-  - {fileID: 11400000, guid: 71b6ec963b62a834495a63c156163e29, type: 2}
-  - {fileID: 11400000, guid: d2f2b981cfc9d9f40b15d52328463434, type: 2}
-  - {fileID: 11400000, guid: 83c5343c85152e74584970ef21138bbb, type: 2}
-  - {fileID: 11400000, guid: 9648d756777e5f74e9dd92a01fa37d0f, type: 2}
-  - {fileID: 11400000, guid: 6419776109643c24fbed913416be8b57, type: 2}
-  - {fileID: 11400000, guid: efdfc1bfb19931e4e96a8c6a877cb477, type: 2}
+  - {fileID: 11400000, guid: 8dddb963ef491aa4bb6dda73859c33bb, type: 2}
+  - {fileID: 11400000, guid: 7e8513304eabf0445a44f02ae59dd1ec, type: 2}
+  - {fileID: 11400000, guid: 4dca30ad83d04e84a8293fc9506c1623, type: 2}
+  - {fileID: 11400000, guid: f1d74bb41b288684c80f5dd14d8bacbe, type: 2}
+  - {fileID: 11400000, guid: cdb816ad91aef1e46ae21d018be620eb, type: 2}
+  - {fileID: 11400000, guid: be9714cbb82a53d4b919397c77b9e7b9, type: 2}
+  - {fileID: 11400000, guid: 66fe12bda3cb56c4d84a634d67204fad, type: 2}

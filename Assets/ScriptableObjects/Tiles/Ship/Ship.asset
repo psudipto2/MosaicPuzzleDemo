@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ee1d046010eba49b49f5b9b93827ed, type: 3}
+  m_Name: Ship
+  m_EditorClassIdentifier: 
+  Tile:
+  - {fileID: 11400000, guid: f25472e0ecf5864499dc7fc337f114ff, type: 2}
+  - {fileID: 11400000, guid: 789d07be44191084ba63ebfedfc3e043, type: 2}
+  - {fileID: 11400000, guid: 989cbeb6fcf5fc64d85bdd52b325bcf6, type: 2}
+  - {fileID: 11400000, guid: 64ded591c0294f34cbff728e7803e2a0, type: 2}
+  - {fileID: 11400000, guid: aa29baf7f28413f45b34834fb9d3a218, type: 2}
+  - {fileID: 11400000, guid: 0bde0338483cd3642974e29e467138da, type: 2}
+  - {fileID: 11400000, guid: 317c0d4ca6bb39743b50abff0deef848, type: 2}
+  - {fileID: 11400000, guid: b686d19ce1238b24c86ecd0b03aa8868, type: 2}
+  - {fileID: 11400000, guid: 09b954d43aabc334f99e4e10f7cc25c5, type: 2}
+  - {fileID: 11400000, guid: aa04aa4d612ef524b9b7ce9a4ea648e6, type: 2}
+  - {fileID: 11400000, guid: b2236b3b12c5d4043bb20a29b969d357, type: 2}

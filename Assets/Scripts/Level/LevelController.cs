@@ -1,7 +1,4 @@
 using Actions;
-using Provider.Manager;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MVC.Level
@@ -38,6 +35,8 @@ namespace MVC.Level
         public void ToggleLevelView(bool val)
         {
             levelView.gameObject.SetActive(val);
+            if (val )
+                levelView.GetComponent<RectTransform>().localScale = Vector3.one;
         }
         #endregion
     }
