@@ -43,7 +43,7 @@ namespace MVC.FallingObject
         public void Destroy()
         {
             fallingObjectModel = null;
-            fallingObjectView = null;
+            fallingObjectView.Destroy(this);
         }
         #endregion
     }

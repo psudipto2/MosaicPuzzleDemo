@@ -38,8 +38,6 @@ namespace Manager.UI
             settingsButton.onClick.AddListener(OnClickSettingsButton);           
             settingsButton.gameObject.SetActive(false);
             levelUIManager.gameObject.SetActive(false);
-            levelMenuPausePanel.gameObject.SetActive(false);
-            mainGamePausePanel.gameObject.SetActive(false);
             GameActions.OnSetLevelMenuButtonsInteractable += SetSettingsButtonInteractable;
             GameActions.OnSetMainGameButtonsInteractable += SetSettingsButtonInteractable;
         }
@@ -56,15 +54,7 @@ namespace Manager.UI
         private void OnClickSettingsButton()
         {
             GameActions.OnPlaySFXAudio?.Invoke(sfxClip);
-            //Hack Fix for pause panel not coming up at first time
-            if (LevelUIManager.gameObject.activeInHierarchy)
-                levelMenuPausePanel.gameObject.SetActive(true);
-            else
-                mainGamePausePanel.gameObject.SetActive(true);
-            if (LevelUIManager.gameObject.activeInHierarchy)
-                levelMenuPausePanel.gameObject.SetActive(true);
-            else
-                mainGamePausePanel.gameObject.SetActive(true);
+            currentPausePanel.gameObject.SetActive(true);
         }
 
         private void SetSettingsButtonInteractable(bool val)

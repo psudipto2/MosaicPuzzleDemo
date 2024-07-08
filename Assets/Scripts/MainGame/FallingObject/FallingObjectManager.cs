@@ -13,6 +13,18 @@ namespace Manager.FallingObject
         [SerializeField] private GameObject fallingObjectViewPrefab;
         #endregion
 
+        #region Unity Methods
+        private void Awake()
+        {
+            
+        }
+
+        private void OnDestroy()
+        {
+            
+        }
+        #endregion
+
         #region Methods
         public void CreateNewFallingObject(Transform transform, RectTransform rectTransform)
         {

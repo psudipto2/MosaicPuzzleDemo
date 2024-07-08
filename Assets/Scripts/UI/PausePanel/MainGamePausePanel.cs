@@ -25,9 +25,12 @@ namespace Manager.UI.PausePanel
         #endregion
 
         #region Unity Methods
-        private void Awake()
+        protected override void Awake()
         {
-            gameObject.SetActive(false);
+            base.Awake();
+            resumeButton.onClick.AddListener(ClosePanel);
+            restartButton.onClick.AddListener(OnClickRestartButton);
+            levelMenuButton.onClick.AddListener(OnClickLevelMenuButton);
         }
         protected override void OnEnable()
         {
@@ -37,20 +40,21 @@ namespace Manager.UI.PausePanel
             else
                 DisplayGameWinView();
             GameActions.OnSetMainGameButtonsInteractable?.Invoke(false);
-            resumeButton.onClick.AddListener(ClosePanel);
-            restartButton.onClick.AddListener(OnClickRestartButton);
-            levelMenuButton.onClick.AddListener(OnClickLevelMenuButton);
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
             GameActions.OnSetMainGameButtonsInteractable?.Invoke(true);
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
             resumeButton.onClick.RemoveListener(ClosePanel);
             restartButton.onClick.RemoveListener(OnClickRestartButton);
             levelMenuButton.onClick.RemoveListener(OnClickLevelMenuButton);
         }
-
         #endregion
 
         #region Methods

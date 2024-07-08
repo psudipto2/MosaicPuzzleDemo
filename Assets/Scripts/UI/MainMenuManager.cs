@@ -17,15 +17,16 @@ namespace Manager.UI.MainMenu
         #endregion
 
         #region Unity Methods
-        private void OnEnable()
+        private void Awake()
         {
             playButton.onClick.AddListener(OnClickPlayButton);
-            exitButton.onClick.AddListener(OnClickExitButton);
+            exitButton.onClick.AddListener(OnClickExitButton); 
         }
-        private void OnDisable()
+
+        private void OnDestroy()
         {
             playButton.onClick.RemoveListener(OnClickPlayButton);
-            exitButton.onClick.RemoveListener(OnClickExitButton);
+            exitButton.onClick.RemoveListener(OnClickExitButton);    
         }
         #endregion
 

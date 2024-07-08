@@ -23,24 +23,33 @@ namespace Manager.UI.PausePanel
         #endregion
 
         #region Unity Methods
-        protected virtual void OnEnable()
+        protected virtual void Awake()
         {
-            backgroundFader.SetActive(true);
-            SetSoundMusicStatusText(musicStatusText, ManagerProvider.Instance.SoundManager.IsMusicOn);
-            SetSoundMusicStatusText(soundStatusText, ManagerProvider.Instance.SoundManager.IsSfxOn);
             mainMenuButton.onClick.AddListener(OnClickMainMenuButton);
             musicButton.onClick.AddListener(OnClickMusicutton);
             soundButton.onClick.AddListener(OnClickSoundButton);
-            exitButton.onClick.AddListener(OnClickExitButton);
+            exitButton.onClick.AddListener(OnClickExitButton);    
+            gameObject.SetActive(false);
+        }
+        protected virtual void OnEnable()
+        {
+            backgroundFader.SetActive(true);
+            Time.timeScale = 0;
+            SetSoundMusicStatusText(musicStatusText, ManagerProvider.Instance.SoundManager.IsMusicOn);
+            SetSoundMusicStatusText(soundStatusText, ManagerProvider.Instance.SoundManager.IsSfxOn);
         }
 
         protected virtual void OnDisable()
         {
             backgroundFader.SetActive(false);
+            Time.timeScale = 1;
+        }
+        protected virtual void OnDestroy()
+        {
             mainMenuButton.onClick?.RemoveListener(OnClickMainMenuButton);
             musicButton?.onClick?.RemoveListener(OnClickMusicutton);
             soundButton?.onClick?.RemoveListener(OnClickSoundButton);
-            exitButton?.onClick?.RemoveListener(OnClickExitButton);
+            exitButton?.onClick?.RemoveListener(OnClickExitButton);         
         }
         #endregion
 

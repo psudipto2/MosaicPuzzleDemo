@@ -15,24 +15,27 @@ namespace Manager.UI.PausePanel
         #endregion
 
         #region Unity Methods
-        private void Awake()
+        protected override void Awake()
         {
-            ManagerProvider.Instance.UIManager.CurrentPausePanel = this;
-            gameObject.SetActive(false);
+            base.Awake();
+            closeButton.onClick.AddListener(ClosePausePanel);
         }
         protected override void OnEnable()
         {
             base.OnEnable();
             GameActions.OnSetLevelMenuButtonsInteractable?.Invoke(false);
-            closeButton.onClick.AddListener(ClosePausePanel);
-            ManagerProvider.Instance.UIManager.CurrentPausePanel = this;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
             GameActions.OnSetLevelMenuButtonsInteractable?.Invoke(true);
+        }
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
             closeButton.onClick.RemoveListener(ClosePausePanel);
+            
         }
         #endregion
 

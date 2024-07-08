@@ -63,7 +63,7 @@ namespace MVC.Block
                 {
                     if (blockModel.Color != currentColor)
                         blockModel.Color = currentColor;
-                    else if (blockModel.FilledSprite != currentSprite)
+                    if (blockModel.FilledSprite != currentSprite)
                         blockModel.FilledSprite = currentSprite;
                     blockView.ToggleImageOnBlankTile(true);
                 }

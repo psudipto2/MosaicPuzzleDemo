@@ -32,8 +32,6 @@ namespace MVC.FallingObject
         private void OnCollisionEnter2D(Collision2D collision)
         {
             fallingObjectController.Destroy();
-            fallingObjectController = null;
-            Destroy(gameObject);
         }
         #endregion
 
@@ -47,6 +45,12 @@ namespace MVC.FallingObject
         private void ApplyForce()
         {
             rigidbody.velocity = new Vector2((rigidbody.velocity.x + fallingObjectController.GetFallingOffset()), Random.Range(200f,300f));
+        }
+
+        public void Destroy(FallingObjectController fallingObjectController)
+        {
+            Destroy(gameObject);
+            fallingObjectController = null;
         }
         #endregion
     }

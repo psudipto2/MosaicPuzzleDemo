@@ -1,6 +1,7 @@
 using Actions;
 using Enums;
 using Manager.UI.PausePanel;
+using Provider.Manager;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,33 +31,32 @@ namespace Manager.UI.Level
         #endregion
 
         #region Unity Methods
-        private void Start()
-        {
-            GameActions.OnSetLevelMenuButtonsInteractable += SetAllButtonsInteractable;
-        }
-        private void OnEnable()
-        {
+        private void Awake()
+        {        
             easyButton.onClick.AddListener(OnClickEasyButton);
             mediumButton.onClick.AddListener(OnClickMediumButton);
             hardButton.onClick.AddListener(OnClickHardButton);
             levelSelectionButtons.Add(easyButton);
             levelSelectionButtons.Add(mediumButton);
             levelSelectionButtons.Add(hardButton);
+            GameActions.OnSetLevelMenuButtonsInteractable += SetAllButtonsInteractable;
+        }
+
+        private void OnEnable()
+        {
             GameActions.OnChangeCurrentLevelType?.Invoke(defaultLevelType);
             currentLevelSelectionButton = defaultLevelButton;
             OnChangeCurentSelectedButton(currentLevelSelectionButton);
+            ManagerProvider.Instance.UIManager.CurrentPausePanel = levelMenuPausePanel;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
+            GameActions.OnSetLevelMenuButtonsInteractable -= SetAllButtonsInteractable;
             easyButton.onClick.RemoveListener(OnClickEasyButton);
             mediumButton.onClick.RemoveListener(OnClickMediumButton);
             hardButton.onClick.RemoveListener(OnClickHardButton);
             levelSelectionButtons.Clear();
-        }
-        private void OnDestroy()
-        {
-            GameActions.OnSetLevelMenuButtonsInteractable -= SetAllButtonsInteractable;
         }
         #endregion
 

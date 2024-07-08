@@ -21,7 +21,7 @@ namespace Manager.MainGame
         [SerializeField] private ShapeManager shapeManager;
         [SerializeField] private TileManager tileManager;
         [SerializeField] private FallingObjectManager fallingObjectManager;
-        [SerializeField] private MainGamePausePanel mainGamePausePanel;
+        [SerializeField] private PausePanelManager mainGamePausePanel;
         [SerializeField] private AudioClip sfxPlaceBlockClip;
         [SerializeField] private AudioClip sfxRemoveBlockClip;
         [SerializeField] private AudioClip sfxPlaceWrongBlockClip;
@@ -50,6 +50,11 @@ namespace Manager.MainGame
             GameActions.OnLevelRestart += RestartLevel;
             GameActions.OnLeaveMainGame += ResetAll;
             gameObject.SetActive(false);
+        }
+
+        private void OnEnable()
+        {
+            ManagerProvider.Instance.UIManager.CurrentPausePanel = mainGamePausePanel;
         }
 
         private void OnDestroy()
@@ -100,14 +105,12 @@ namespace Manager.MainGame
                 GameActions.OnLevelWin?.Invoke();
                 StartCoroutine(OnWinLevel());
             }
-            Debug.Log(blocksToWin);
         }
 
         private void OnRemoveBlock()
         {
             GameActions.OnPlaySFXAudio?.Invoke(sfxRemoveBlockClip);
             blocksToWin++;
-            Debug.Log(blocksToWin);
         }
 
         private void OnPlaceWrongBlock(Transform transform, RectTransform rectTransform)
@@ -118,11 +121,9 @@ namespace Manager.MainGame
         }
         private IEnumerator OnWinLevel()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.75f);
             GameActions.OnPlaySFXAudio?.Invoke(sfxGameWinClip);
-            mainGamePausePanel.IsGameWinView = true;
-            //Hack Fix for pause panel not coming up at first time
-            mainGamePausePanel.gameObject.SetActive(true);
+            mainGamePausePanel.GetComponent<MainGamePausePanel>().IsGameWinView = true;
             mainGamePausePanel.gameObject.SetActive(true);
         }
         #endregion
