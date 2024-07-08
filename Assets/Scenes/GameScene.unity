@@ -6771,6 +6771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockViewPrefab: {fileID: 671156312931848308, guid: c61630d9fb7b5344982da5b6cc81c98e, type: 3}
+  allBlockList: {fileID: 11400000, guid: 47b13251561e66f48b3f100caf68438f, type: 2}
 --- !u!1 &2016009675
 GameObject:
   m_ObjectHideFlags: 0

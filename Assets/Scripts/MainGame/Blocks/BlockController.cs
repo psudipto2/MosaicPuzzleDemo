@@ -111,6 +111,21 @@ namespace MVC.Block
             blockView.DestroyView();
             blockModel = null;
         }
+
+        public void ToggleBlockView(bool val)
+        {
+            blockView.gameObject.SetActive(val);
+        }
+
+        public bool CheckBlockActive()
+        {
+            return blockView.gameObject.activeInHierarchy;
+        }
+
+        public void SetBlockIndex(int index)
+        {
+            blockView.gameObject.transform.SetSiblingIndex(index);
+        }
         #endregion
     }
 }
