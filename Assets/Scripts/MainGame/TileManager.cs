@@ -123,7 +123,10 @@ namespace Manager.Tile
             for(int i=0;i<blockPool.Count; i++)
             {
                 if (blockPool[i].CheckBlockActive())
+                {
+                    //blockPool[i].ResetBlockView();
                     blockPool[i].ToggleBlockView(false);
+                }
             }
         }
         #endregion

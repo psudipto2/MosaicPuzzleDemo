@@ -74,9 +74,11 @@ namespace MVC.Block
             button.interactable = val;
         }
 
-        public void DestroyView()
+        public void ResetView()
         {
-            Destroy(gameObject);
+            filledImage.gameObject.SetActive(false);
+            if(blockController.BlockModel.Block!=null)
+                blankImage.gameObject.SetActive(true);
         }
         #endregion
     }

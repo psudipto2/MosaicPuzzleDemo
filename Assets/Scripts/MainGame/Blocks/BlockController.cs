@@ -95,21 +95,16 @@ namespace MVC.Block
         public void ResetBlock()
         {
             if (ManagerProvider.Instance.MainGameManager.TileManager.IsBlankTile)
-            {
                 blockView.ToggleImageOnBlankTile(false);
-                blockFilled = false;
-            }
             else
-            {
                 blockView.ToggleImage(BlockType.Blank);
-                blockFilled = false;
-            }
+            blockFilled = false;
         }
 
-        public void DestroyBlock()
+        public void ResetBlockView()
         {
-            blockView.DestroyView();
-            blockModel = null;
+            blockFilled = false;
+            blockView.ResetView();
         }
 
         public void ToggleBlockView(bool val)
