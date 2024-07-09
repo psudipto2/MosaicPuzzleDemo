@@ -124,7 +124,7 @@ namespace Manager.Tile
             {
                 if (blockPool[i].CheckBlockActive())
                 {
-                    //blockPool[i].ResetBlockView();
+                    blockPool[i].ResetBlockView();
                     blockPool[i].ToggleBlockView(false);
                 }
             }
