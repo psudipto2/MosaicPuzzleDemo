@@ -73,8 +73,8 @@ namespace Manager.UI.PausePanel
 
         protected override void OnClickMainMenuButton()
         {
-            base.OnClickMainMenuButton();
             GameActions.OnLeaveMainGame?.Invoke();
+            base.OnClickMainMenuButton();
         }
 
         private void DisplayGameWinView()
